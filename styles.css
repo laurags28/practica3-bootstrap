@@ -48,13 +48,16 @@ footer {
 
 /* Adaptación de la portada a dispositivos móviles */
 @media (max-width: 767.98px) {
-    .hero {
-        background-position: center;
+
+    .hero-image {
+        object-position: center;
+        opacity: 0.35;
     }
 
-    .hero::before {
-        background: rgba(0, 0, 0, 0.65);
+    .card-img-overlay {
+        background: rgba(0, 0, 0, 0.55) !important;
     }
+
 }
 
 /* Secciones de las generaciones */
@@ -84,4 +87,67 @@ footer {
 /* Animación al pasar el ratón */
 .imagen-generacion img:hover {
     transform: scale(1.08);
+}
+
+/* Desplazamiento suave entre secciones */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tamaño responsive del logo */
+.navbar-brand {
+    font-size: clamp(.7rem, 2.5vw, 1.25rem);
+    white-space: nowrap;
+}
+
+/* Imagen de portada */
+.hero-image {
+    height: 380px;
+    object-fit: contain;
+    object-position: 78% center;
+    background: radial-gradient(
+        circle at 75%,
+        #40509b,
+        #141b30 65%
+    );
+}
+
+/* Imágenes de las generaciones */
+.pokemon-image {
+    height: 290px;
+    object-fit: contain;
+}
+
+/* Imágenes de la galería */
+.gallery-image {
+    height: 180px;
+    object-fit: contain;
+}
+
+/* Fondo de las imágenes */
+.section-image {
+    background: #eef2fa;
+}
+
+
+/* Animación de aparición al hacer scroll */
+.pokemon-image.reveal-ready {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Estado visible */
+.pokemon-image.reveal-ready.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Accesibilidad: respetar reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .pokemon-image.reveal-ready {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
