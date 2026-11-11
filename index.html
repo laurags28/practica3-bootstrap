@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maqueta responsive sobre los Pokémon legendarios de las generaciones I a IX, realizada con Bootstrap.">
+    <title>PokéLegends | Pokémon legendarios</title>
+
+    <!-- Bootstrap 5: estilos y componentes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Estilos mínimos provisionales: los trasladaremos a CSS en otro paso -->
+    <style>
+        html { scroll-behavior: smooth; }
+        .navbar-brand { font-size: clamp(.7rem, 2.5vw, 1.25rem); white-space: nowrap; }
+        .hero-image { height: 380px; object-fit: contain; object-position: 78% center;
+                      background: radial-gradient(circle at 75%, #40509b, #141b30 65%); }
+        .pokemon-image { height: 290px; object-fit: contain; }
+        .gallery-image { height: 180px; object-fit: contain; }
+        .section-image { background: #eef2fa; }
+    </style>
+</head>
+<body class="bg-body-tertiary">
+
+    <!-- 1. NAVBAR: tres columnas (menú, logo y herramientas) -->
+    <header id="inicio">
+        <nav class="navbar navbar-dark bg-dark" aria-label="Navegación principal">
+            <div class="container d-block">
+                <div class="row align-items-center g-2">
+                    <div class="col-4">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                                aria-expanded="false" aria-label="Abrir menú">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="col-4 text-center">
+                        <a class="navbar-brand m-0 fw-bold" href="#inicio">
+                            <i class="bi bi-stars" aria-hidden="true"></i> PokéLegends
+                        </a>
+                    </div>
+                    <div class="col-4 text-end">
+                        <a class="text-white me-3" href="#generaciones" aria-label="Ir a generaciones">
+                            <i class="bi bi-grid-3x3-gap" aria-hidden="true"></i>
+                        </a>
+                        <a class="text-white" href="#galeria" aria-label="Ir a galería">
+                            <i class="bi bi-images" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="collapse" id="menuPrincipal">
+                    <ul class="navbar-nav flex-column flex-md-row gap-md-4 pt-3">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#generaciones">Generaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#redes">Redes sociales</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. JUMBOTRON: card con imagen y texto superpuesto -->
+        <section class="container py-4" aria-labelledby="titulo-web">
+            <div class="card bg-dark text-white border-0 overflow-hidden shadow">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
+                     class="card-img hero-image" alt="Ilustración de Mewtwo" fetchpriority="high">
+                <div class="card-img-overlay d-flex flex-column justify-content-center"
+                     style="background: linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.25));">
+                    <div class="col-12 col-md-7 p-2 p-md-4">
+                        <p class="text-uppercase fw-semibold mb-2">De Kanto a Paldea</p>
+                        <h1 class="display-5 fw-bold" id="titulo-web">Pokémon legendarios</h1>
+                        <p class="lead">Un recorrido por nueve generaciones de criaturas extraordinarias.</p>
+                        <a class="btn btn-warning fw-semibold" href="#generaciones">Explorar generaciones</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FILAS EN DAMERO: 2 columnas en escritorio, 1 en móvil -->
+        <section class="container py-4" id="generaciones" aria-labelledby="titulo-generaciones">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold" id="titulo-generaciones">Las nueve generaciones</h2>
+                <p class="text-body-secondary">Primera selección de legendarios. Ampliaremos el catálogo en los siguientes pasos.</p>
+            </div>
+
+            <!-- Fila 1: Generaciones I y II -->
+            <article class="row g-4 align-items-center mb-5" id="kanto-johto">
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-primary mb-2">Generaciones I y II</span>
+                            <h3 class="card-title h4">Kanto y Johto</h3>
+                            <p class="card-text">Las aves legendarias y Mewtwo marcaron el comienzo. En Johto llegaron las bestias legendarias, Lugia y Ho-Oh.</p>
+                            <p class="mb-0"><strong>Destacados:</strong> Articuno, Zapdos, Moltres, Mewtwo, Raikou, Entei, Suicune, Lugia y Ho-Oh.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="section-image rounded-4 text-center p-3">
+                        <img class="img-fluid pokemon-image" loading="lazy"
+                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
+                             alt="Mewtwo, Pokémon legendario de Kanto">
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fila 2: Generación III (orden contrario) -->
+            <article class="row g-4 align-items-center mb-5" id="hoenn">
+                <div class="col-12 col-md-6">
+                    <div class="section-image rounded-4 text-center p-3">
+                        <img class="img-fluid pokemon-image" loading="lazy"
+                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png"
+                             alt="Rayquaza, Pokémon legendario de Hoenn">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-success mb-2">Generación III</span>
+                            <h3 class="card-title h4">Hoenn</h3>
+                            <p class="card-text">Los poderes del océano, la tierra y el cielo se representan mediante Kyogre, Groudon y Rayquaza.</p>
+                            <p class="mb-0"><strong>Destacados:</strong> Regirock, Regice, Registeel, Latias, Latios, Kyogre, Groudon y Rayquaza.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fila 3: Generación IV -->
+            <article class="row g-4 align-items-center mb-5" id="sinnoh">
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-primary mb-2">Generación IV</span>
+                            <h3 class="card-title h4">Sinnoh</h3>
+                            <p class="card-text">Dialga, Palkia y Giratina están relacionados con el tiempo, el espacio y el Mundo Distorsión.</p>
+                            <p class="mb-0"><strong>Destacados:</strong> Uxie, Mesprit, Azelf, Dialga, Palkia, Heatran, Regigigas, Giratina y Cresselia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="section-image rounded-4 text-center p-3">
+                        <img class="img-fluid pokemon-image" loading="lazy"
+                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png"
+                             alt="Giratina, Pokémon legendario de Sinnoh">
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fila 4: Generación V (orden contrario) -->
+            <article class="row g-4 align-items-center mb-5" id="teselia">
+                <div class="col-12 col-md-6">
+                    <div class="section-image rounded-4 text-center p-3">
+                        <img class="img-fluid pokemon-image" loading="lazy"
+                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/643.png"
+                             alt="Reshiram, Pokémon legendario de Teselia">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-success mb-2">Generación V</span>
+                            <h3 class="card-title h4">Teselia</h3>
+                            <p class="card-text">Reshiram, Zekrom y Kyurem protagonizan las leyendas de esta región, junto a otros grupos de legendarios.</p>
+                            <p class="mb-0"><strong>Destacados:</strong> Cobalion, Terrakion, Virizion, Tornadus, Thundurus, Landorus, Reshiram, Zekrom y Kyurem.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fila 5: Generaciones VI y VII -->
+            <article class="row g-4 align-items-center mb-5" id="kalos-alola">
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-primary mb-2">Generaciones VI y VII</span>
+                            <h3 class="card-title h4">Kalos y Alola</h3>
+                            <p class="card-text">Kalos presenta a Xerneas, Yveltal y Zygarde. Alola incorpora guardianes de las islas y legendarios cósmicos.</p>
+                            <p class="mb-0"><strong>Destacados:</strong> Xerneas, Yveltal, Zygarde, los cuatro Tapu, Solgaleo, Lunala y Necrozma.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="section-image rounded-4 text-center p-3">
+                        <img class="img-fluid pokemon-image" loading="lazy"
+                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/791.png"
+                             alt="Solgaleo, Pokémon legendario de Alola">
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fila 6: Generaciones VIII y IX (orden contrario) -->
+            <article class="row g-4 align-items-center mb-5" id="galar-paldea">
+                <div class="col-12 col-md-6">
+                    <div class="section-image rounded-4 text-center p-3">
+                        <img class="img-fluid pokemon-image" loading="lazy"
+                             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1007.png"
+                             alt="Koraidon, Pokémon legendario de Paldea">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <span class="badge text-bg-success mb-2">Generaciones VIII y IX</span>
+                            <h3 class="card-title h4">Galar y Paldea</h3>
+                            <p class="card-text">Zacian y Zamazenta defienden Galar. Koraidon y Miraidon destacan entre los legendarios de Paldea.</p>
+                            <p class="mb-0"><strong>Destacados:</strong> Zacian, Zamazenta, Eternatus, Calyrex, Koraidon, Miraidon, Ogerpon y Terapagos.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- 4. FILA DE ANCHO COMPLETO -->
+        <section class="bg-dark text-white py-5">
+            <div class="container text-center">
+                <h2 class="h3">Un viaje a través de nueve generaciones</h2>
+                <p class="mb-0">Desde los primeros legendarios de Kanto hasta los misterios de Paldea.</p>
+            </div>
+        </section>
+
+        <!-- 5. GALERÍA: 4 columnas en escritorio, 1 en móvil; cada imagen abre un collapse -->
+        <section class="container py-5" id="galeria" aria-labelledby="titulo-galeria">
+            <h2 class="text-center fw-bold mb-2" id="titulo-galeria">Galería legendaria</h2>
+            <p class="text-center text-body-secondary mb-4">Pulsa sobre una imagen para descubrir más información.</p>
+            <div class="row g-4">
+                <div class="col-12 col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <button class="btn border-0 p-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#detalleLugia" aria-expanded="false" aria-controls="detalleLugia">
+                            <img class="img-fluid gallery-image" loading="lazy"
+                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png"
+                                 alt="Lugia. Pulsar para ver más información">
+                        </button>
+                        <div class="card-body pt-0 text-center">
+                            <h3 class="h5">Lugia</h3>
+                            <div class="collapse" id="detalleLugia">
+                                <p class="small mb-0">Generación II. Legendario de tipo Psíquico y Volador asociado a los mares.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <button class="btn border-0 p-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#detalleXerneas" aria-expanded="false" aria-controls="detalleXerneas">
+                            <img class="img-fluid gallery-image" loading="lazy"
+                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/716.png"
+                                 alt="Xerneas. Pulsar para ver más información">
+                        </button>
+                        <div class="card-body pt-0 text-center">
+                            <h3 class="h5">Xerneas</h3>
+                            <div class="collapse" id="detalleXerneas">
+                                <p class="small mb-0">Generación VI. Legendario de tipo Hada relacionado con la vida.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <button class="btn border-0 p-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#detalleZacian" aria-expanded="false" aria-controls="detalleZacian">
+                            <img class="img-fluid gallery-image" loading="lazy"
+                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/888.png"
+                                 alt="Zacian. Pulsar para ver más información">
+                        </button>
+                        <div class="card-body pt-0 text-center">
+                            <h3 class="h5">Zacian</h3>
+                            <div class="collapse" id="detalleZacian">
+                                <p class="small mb-0">Generación VIII. Legendario de Galar conocido como el héroe de la espada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card h-100 shadow-sm">
+                        <button class="btn border-0 p-2" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#detalleMiraidon" aria-expanded="false" aria-controls="detalleMiraidon">
+                            <img class="img-fluid gallery-image" loading="lazy"
+                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1008.png"
+                                 alt="Miraidon. Pulsar para ver más información">
+                        </button>
+                        <div class="card-body pt-0 text-center">
+                            <h3 class="h5">Miraidon</h3>
+                            <div class="collapse" id="detalleMiraidon">
+                                <p class="small mb-0">Generación IX. Legendario de tipo Eléctrico y Dragón de aspecto futurista.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. FOOTER: redes en línea en escritorio y accordion en móvil -->
+    <footer id="redes" class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h2 class="h5 mb-3">Redes y comunidad</h2>
+            <div class="d-none d-md-flex justify-content-center gap-4">
+                <a class="link-light text-decoration-none" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-instagram" aria-hidden="true"></i> Instagram
+                </a>
+                <a class="link-light text-decoration-none" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-youtube" aria-hidden="true"></i> YouTube
+                </a>
+                <a class="link-light text-decoration-none" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github" aria-hidden="true"></i> GitHub
+                </a>
+            </div>
+            <div class="accordion d-md-none" id="accordionRedes">
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="encabezadoRedes">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#contenidoRedes" aria-expanded="false" aria-controls="contenidoRedes">
+                            <i class="bi bi-share me-2" aria-hidden="true"></i> Mostrar redes sociales
+                        </button>
+                    </h3>
+                    <div id="contenidoRedes" class="accordion-collapse collapse" aria-labelledby="encabezadoRedes" data-bs-parent="#accordionRedes">
+                        <div class="accordion-body d-flex flex-column gap-2 text-start">
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram" aria-hidden="true"></i> Instagram</a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-youtube" aria-hidden="true"></i> YouTube</a>
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="small text-white-50 mt-4 mb-0">Práctica 3 · Diseño de Interfaces Web · Bootstrap 5</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle: imprescindible para navbar, collapse y accordion -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+</body>
+</html>
