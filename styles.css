@@ -1,0 +1,58 @@
+/* Colores principales de la página */
+:root {
+    --color-principal: #1e293b;
+    --color-secundario: #334155;
+    --color-dorado: #facc15;
+    --color-fondo: #f8fafc;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-principal);
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: var(--color-principal);
+}
+
+/* Tarjetas de Pokémon */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imágenes */
+.card img {
+    object-fit: contain;
+}
+
+/* Títulos de las secciones */
+h2 {
+    font-weight: bold;
+}
+
+/* Pie de página */
+footer {
+    background-color: var(--color-principal);
+    color: white;
+}
+
+/* Adaptación de la portada a dispositivos móviles */
+@media (max-width: 767.98px) {
+    .hero {
+        background-position: center;
+    }
+
+    .hero::before {
+        background: rgba(0, 0, 0, 0.65);
+    }
+}
