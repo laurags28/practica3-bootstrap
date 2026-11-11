@@ -151,3 +151,8 @@ html {
         transition: none;
     }
 }
+
+/* Separación al navegar entre secciones */
+section[id] {
+    scroll-margin-top: 20px;
+}
